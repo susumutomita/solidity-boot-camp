@@ -22,4 +22,13 @@ contract ArrayManipulationTest is Test {
         assertEq(arrayManipulation.getArray(), expected);
     }
 
+    function test_DeleteItem() public {
+        arrayManipulation.addItem(1);
+        arrayManipulation.addItem(2);
+        arrayManipulation.deleteItem(1);
+        uint[] memory expected = new uint[](2);
+        expected[0] = 0;
+        expected[1] = 2;
+        assertEq(arrayManipulation.getArray(), expected);
+    }
 }
