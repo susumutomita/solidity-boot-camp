@@ -11,7 +11,9 @@ contract ArrayManipulation {
 
     function deleteItem(uint index) public {
         require(index < array.length, "Index out of bounds");
-        array[index] = array[array.length - 1];
+        for (uint i = index; i<array.length-1; i++){
+            array[i] = array[i+1];
+        }
         array.pop();
     }
 

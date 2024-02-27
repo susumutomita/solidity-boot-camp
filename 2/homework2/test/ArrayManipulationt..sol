@@ -9,10 +9,10 @@ contract ArrayManipulationTest is Test {
 
     function setUp() public {
         arrayManipulation = new ArrayManipulation();
-        arrayManipulation.addItem(0);
     }
 
     function test_Increment() public {
+        arrayManipulation.addItem(0);
         arrayManipulation.addItem(1);
         arrayManipulation.addItem(2);
         uint[] memory expected = new uint[](3);
@@ -23,12 +23,28 @@ contract ArrayManipulationTest is Test {
     }
 
     function test_DeleteItem() public {
+        arrayManipulation.addItem(0);
         arrayManipulation.addItem(1);
         arrayManipulation.addItem(2);
         arrayManipulation.deleteItem(1);
         uint[] memory expected = new uint[](2);
         expected[0] = 0;
         expected[1] = 2;
+        assertEq(arrayManipulation.getArray(), expected);
+    }
+
+    function test_Order() public {
+        arrayManipulation.addItem(0);
+        arrayManipulation.addItem(1);
+        arrayManipulation.addItem(2);
+        arrayManipulation.addItem(3);
+        arrayManipulation.addItem(4);
+        arrayManipulation.deleteItem(1);
+        arrayManipulation.deleteItem(1);
+        uint[] memory expected = new uint[](3);
+        expected[0] = 0;
+        expected[1] = 3;
+        expected[2] = 4;
         assertEq(arrayManipulation.getArray(), expected);
     }
 }
