@@ -3,21 +3,21 @@
 pragma solidity ^0.8.13;
 
 contract ArrayManipulation {
-    uint[] public array;
+    uint256[] public array;
 
-    function addItem(uint item) public {
+    function addItem(uint256 item) public {
         array.push(item);
     }
 
-    function deleteItem(uint index) public {
+    function deleteItem(uint256 index) public {
         require(index < array.length, "Index out of bounds");
-        for (uint i = index; i<array.length-1; i++){
-            array[i] = array[i+1];
+        for (uint256 i = index; i < array.length - 1; i++) {
+            array[i] = array[i + 1];
         }
         array.pop();
     }
 
-    function getArray() public view returns (uint[] memory) {
+    function getArray() public view returns (uint256[] memory) {
         return array;
     }
 }

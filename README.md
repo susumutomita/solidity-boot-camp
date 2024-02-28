@@ -18,49 +18,56 @@ https://book.getfoundry.sh/
 ### Build
 
 ```shell
-$ forge build
+$ make build
 ```
 
 ### Test
 
 ```shell
-$ forge test
+make test
 ```
 
 ### Format
 
 ```shell
-$ forge fmt
+make fmt
 ```
 
 ### Gas Snapshots
 
 ```shell
-$ forge snapshot
+make gas_snapshot
 ```
 
 ### Anvil
 
 ```shell
-$ anvil
+anvil or make start_local_node
 ```
 
 ### Deploy
 
 ```shell
-$ forge script script/Counter.s.sol:CounterScript --rpc-url <your_rpc_url> --private-key <your_private_key>
+forge script script/ArrayManipulation.s.sol --rpc-url <your_rpc_url> --private-key <your_private_key>
+
+```
+
+#### Example to deploy a contract to local node
+
+```shell
+forge script script/ArrayManipulation.s.sol --rpc-url http://127.0.0.1:8545 --private-key <your_private_key>
 ```
 
 ### Cast
 
 ```shell
-$ cast <subcommand>
+cast <subcommand>
 ```
 
 ### Help
 
 ```shell
-$ forge --help
-$ anvil --help
-$ cast --help
+forge --help
+anvil --help
+cast --help
 ```

@@ -15,7 +15,7 @@ contract ArrayManipulationTest is Test {
         arrayManipulation.addItem(0);
         arrayManipulation.addItem(1);
         arrayManipulation.addItem(2);
-        uint[] memory expected = new uint[](3);
+        uint256[] memory expected = new uint256[](3);
         expected[0] = 0;
         expected[1] = 1;
         expected[2] = 2;
@@ -27,7 +27,7 @@ contract ArrayManipulationTest is Test {
         arrayManipulation.addItem(1);
         arrayManipulation.addItem(2);
         arrayManipulation.deleteItem(1);
-        uint[] memory expected = new uint[](2);
+        uint256[] memory expected = new uint256[](2);
         expected[0] = 0;
         expected[1] = 2;
         assertEq(arrayManipulation.getArray(), expected);
@@ -41,7 +41,7 @@ contract ArrayManipulationTest is Test {
         arrayManipulation.addItem(4);
         arrayManipulation.deleteItem(1);
         arrayManipulation.deleteItem(1);
-        uint[] memory expected = new uint[](3);
+        uint256[] memory expected = new uint256[](3);
         expected[0] = 0;
         expected[1] = 3;
         expected[2] = 4;
