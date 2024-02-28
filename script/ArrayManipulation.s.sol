@@ -10,6 +10,5 @@ contract ArrayManipulationScript is Script {
     function run() public {
         vm.broadcast();
         ArrayManipulation arrayManipulation = new ArrayManipulation();
-        vm.stopBroadcast();
     }
 }

@@ -64,6 +64,15 @@ forge script script/ArrayManipulation.s.sol --rpc-url http://127.0.0.1:8545 --pr
 cast <subcommand>
 ```
 
+#### Example to call a contract
+
+Once deploy completed , broadcast/ArrayManipulation.s.sol is created.
+You can find the contract address in the run-latest.json file.
+
+```shell
+cast send 0x5FbDB2315678afecb367f032d93F642f64180aa3 "addItem(uint256)" 2 --rpc-url http://localhost:8545 --private-key <your_private_key>
+```
+
 ### Help
 
 ```shell
