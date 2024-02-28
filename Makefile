@@ -10,6 +10,10 @@ test:
 format:
 	forge fmt
 
+.PHONY: format_check
+format_check:
+	forge fmt --check
+
 .PHONY: gas_snapshot
 gas_snapshot:
 	forge snapshot

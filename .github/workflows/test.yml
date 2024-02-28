@@ -26,10 +26,10 @@ jobs:
         with:
           version: nightly
 
-      - name: Format
+      - name: Format check
         run: |
-          make format
-        id: format
+          make format_check
+        id: format_check
 
       - name: Run Forge build
         run: |
