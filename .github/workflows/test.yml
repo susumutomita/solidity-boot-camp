@@ -26,6 +26,11 @@ jobs:
         with:
           version: nightly
 
+      - name: Format
+        run: |
+          make format
+        id: format
+
       - name: Run Forge build
         run: |
           forge --version
